@@ -1,6 +1,7 @@
 export type Platform = 'Meta' | 'TikTok';
 export type CampaignStage = 'idea' | 'prep' | 'ready' | 'testing' | 'winner' | 'scale' | 'stopped';
 export type Priority = 'low' | 'medium' | 'high';
+export type WorkStatus = 'todo' | 'doing' | 'done';
 
 export interface Site {
   id: string;
@@ -31,6 +32,7 @@ export interface Campaign {
   product: string;
   name: string;
   stage: CampaignStage;
+  workStatus?: WorkStatus;
   objective: string;
   budget: number;
   notes: string;
