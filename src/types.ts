@@ -3,12 +3,25 @@ export type CampaignStage = 'idea' | 'prep' | 'ready' | 'testing' | 'winner' | '
 export type Priority = 'low' | 'medium' | 'high';
 export type WorkStatus = 'todo' | 'doing' | 'done';
 
+export interface EncryptedVaultEntry {
+  version: 1;
+  salt: string;
+  iv: string;
+  ciphertext: string;
+}
+
+export interface SiteAdAccounts {
+  Meta?: EncryptedVaultEntry;
+  TikTok?: EncryptedVaultEntry;
+}
+
 export interface Site {
   id: string;
   name: string;
   url?: string;
   active: boolean;
   createdAt: string;
+  adAccounts?: SiteAdAccounts;
 }
 
 export interface CreativeLink {
